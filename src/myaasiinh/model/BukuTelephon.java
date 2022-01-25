@@ -1,4 +1,4 @@
-package myaasiinh.dao.model;
+package myaasiinh.model;
 
 public class BukuTelephon {
 
