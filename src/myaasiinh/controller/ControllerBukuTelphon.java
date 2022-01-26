@@ -43,7 +43,7 @@ public class ControllerBukuTelphon {
 
     //fungsi controller menampilkan data yang dipilih dari tabel
     public void isiField(int row) {
-        bukuTelpon.masukanIdTextField().setText(lb.get(row).getId());
+        bukuTelpon.masukanIdTextField().setText(String.valueOf(lb.get(row).getId()));
         bukuTelpon.masukanNoTextField().setText(lb.get(row).getNotelp());
         bukuTelpon.masukanNamaTextField().setText(lb.get(row).getNama());
         bukuTelpon.masukanAlamatTextField().setText(lb.get(row).getAlamat());
