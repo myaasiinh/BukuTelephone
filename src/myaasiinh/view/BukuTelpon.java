@@ -2,55 +2,64 @@ package myaasiinh.view;
 
 import javax.swing.*;
 
-public class BukuTelpon {
+public class BukuTelpon extends JFrame {
 
 
-    private JPanel BukuTelphon;
+    public BukuTelpon() {
+        frameInit();
+    }
+
+    public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(() -> new BukuTelpon().setVisible(true));
+
+    }
+
+
 
     public JButton insertButton() {
-        return insertButton();
+        return buttonInsert();
     }
     public JButton updateButton() {
-        return updateButton();
+        return buttonUpdate();
     }
     public JButton deleteButton() {
-        return deleteButton();
+        return buttonDelete();
     }
     public JButton resetButton() {
-        return resetButton();
+        return buttonReset();
     }
     public JTextField masukanIdTextField() {
-        return masukanIdTextField();
+        return txtId();
     }
     public JTextField masukanNoTextField() {
-        return masukanNoTextField();
+        return txtNo();
     }
     public JTextField masukanNamaTextField() {
-        return masukanNamaTextField();
+        return txtNama();
     }
     public JTextField masukanAlamatTextField() {
-        return masukanAlamatTextField();
+        return txtAlamat();
     }
     public JTextField masukanBerdasarkanNamaTextField() {
-        return masukanBerdasarkanNamaTextField();
+        return txtBerdasarkanNama();
     }
     public JButton cariButton() {
-        return cariButton();
+        return buttonCari();
     }
     public JTable table1() {
         return table1();
     }
     private JLabel idTv() {
-        return idTv();
+        return labelId();
     }
     private JLabel noTv() {
-        return noTv();
+        return labelNo();
     }
     private JLabel namaTv() {
-        return namaTv();
+        return labelNama();
     }
     private JLabel alamatTv() {
-        return alamatTv();
+        return labelAlamat();
     }
 
 
