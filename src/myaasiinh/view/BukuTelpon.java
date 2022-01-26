@@ -5,6 +5,8 @@ import javax.swing.*;
 public class BukuTelpon {
 
 
+    private JPanel BukuTelphon;
+
     public JButton insertButton() {
         return insertButton();
     }

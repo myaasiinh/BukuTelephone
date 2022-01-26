@@ -8,7 +8,7 @@ public class BukuTelephon {
     private String alamat;
     private String notelp;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
