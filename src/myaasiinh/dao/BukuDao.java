@@ -37,9 +37,6 @@ public class   BukuDao {
         }
     }
 
-    public static void insert(String id, String no, String nama, String alamat, String telp, String email, String kota, String kodePos, String keterangan, String noTelp, String berdasarkanNama) {
-    }
-
     //fungsi update data ke database
     public void update(BukuTelephon b) {
         PreparedStatement statement = null;
@@ -62,9 +59,6 @@ public class   BukuDao {
 
     }
 
-    public static void update(String id, String no, String nama, String alamat, String telp, String email, String kota, String kodePos, String keterangan, String noTelp, String berdasarkanNama) {
-    }
-
     //fungsi delete data dari database
     public void delete(int id) {
         PreparedStatement statement = null;
@@ -83,9 +77,6 @@ public class   BukuDao {
             }
         }
 
-    }
-
-    public static void delete(String id, String no, String nama, String alamat, String telp, String email, String kota, String kodePos, String keterangan, String noTelp, String berdasarkanNama) {
     }
 
     //fungsi menampilkan data ke tabel
