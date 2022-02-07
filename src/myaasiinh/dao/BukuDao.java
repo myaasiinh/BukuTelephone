@@ -13,21 +13,21 @@ import myaasiinh.koneksi.Koneksi;
 
 public class   BukuDao {
 
-    Connection connection;
+    static Connection connection;
 
-    final String insert = "INSERT into bukutelephon (nomor, nama, alamat) VALUES (?, ?, ?):";
-    final String update = "UPDATE bukutelephon set nomer=?, nama=?, alamat=? where id=? ;";
-    final String delete = "DELETE From bukutelephon where id=? ;";
+    static final String insert = "INSERT into bukutelephon (nomor, nama, alamat) VALUES (?, ?, ?):";
+    static final String update = "UPDATE bukutelephon set nomer=?, nama=?, alamat=? where id=? ;";
+    static final String delete = "DELETE From bukutelephon where id=? ;";
     final String select = "SELECT * FROM bukutelephon;";
     final String carinama = "SELECT * FROM bukutelephon where nama like ?";
 
     public BukuDao () {
-        connection = Koneksi.connection();
+        Koneksi.getConnection();
     }
 
 
     //fungsi masukan data ke database
-    public void insert(BukuTelephon b ) {
+    public static void insert(BukuTelephon b) {
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(insert);
@@ -51,8 +51,11 @@ public class   BukuDao {
         }
     }
 
+    public static void insert(String id, String no, String nama, String alamat, String telp, String email, String kota, String kodePos, String keterangan, String noTelp, String berdasarkanNama) {
+    }
+
     //fungsi update data ke database
-    public void update(BukuTelephon b) {
+    public static void update(BukuTelephon b) {
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(update);
@@ -73,8 +76,11 @@ public class   BukuDao {
 
     }
 
+    public static void update(String id, String no, String nama, String alamat, String telp, String email, String kota, String kodePos, String keterangan, String noTelp, String berdasarkanNama) {
+    }
+
     //fungsi delete data dari database
-    public void delete(int id) {
+    public static void delete(int id) {
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(delete);
@@ -91,6 +97,9 @@ public class   BukuDao {
             }
         }
 
+    }
+
+    public static void delete(String id, String no, String nama, String alamat, String telp, String email, String kota, String kodePos, String keterangan, String noTelp, String berdasarkanNama) {
     }
 
     //fungsi menampilkan data ke tabel
