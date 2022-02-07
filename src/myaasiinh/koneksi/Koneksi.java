@@ -9,27 +9,32 @@ import java.util.logging.Logger;
 
 public class Koneksi {
 
-    private static Connection connection;
 
-    public static void getConnection(){
+    private static Connection con;
 
-        if (connection == null){
-
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gbtelphon","root","");
-                System.out.println("Koneksi Berhasil");
-
-            } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
-            }
+    public static void getConnection() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost3306/gbtelphon", "root", "");
+        }
+        catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
 
         }
-
     }
 
-    public static void setConnection(Connection connection) {
-        Koneksi.connection = connection;
+    public static Connection getCon() {
+        return con;
     }
+
+    public static void closeConnection() {
+        try {
+            con.close();
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
 }

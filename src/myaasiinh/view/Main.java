@@ -8,12 +8,31 @@ import java.awt.event.ActionListener;
 
 public class Main {
 
+    JButton INSERTButton;
+    JButton UPDATEButton;
+    JButton DELETEButton;
+    JButton RESETButton;
+    JButton SEARCHButton;
+    JTextField IdTextField;
+    JTextField NamaTextField;
+    JTextField AlamatTextField;
+    JTextField NoTelphonTextField;
+    JTextField SearchWithNameTextField;
+    JLabel IdLabel;
+    JLabel NamaLabel;
+    JLabel AlamatLabel;
+    JLabel NoTelpLabel;
+    JPanel Panel;
+    JTable Table;
+
+
+
     public JPanel getPanel1() {
         return Panel;
     }
 
     public JTextField getIdTextField() {
-        return IdTextField();
+        return IdTextField;
     }
 
     public JTextField getNoTelphonTextField() {

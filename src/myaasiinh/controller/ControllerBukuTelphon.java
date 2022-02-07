@@ -6,6 +6,8 @@ import myaasiinh.dao.BukuImplements;
 import myaasiinh.model.BukuTelephon;
 import myaasiinh.model.TableBukuTelephone;
 import myaasiinh.view.Main;
+
+import javax.swing.*;
 import javax.swing.table.TableModel;
 import java.util.List;
 
@@ -104,6 +106,16 @@ public class ControllerBukuTelphon {
     //fungsi search data berdasarkan user dari textfield di frame
     public void search() {
         BukuTelephon buku = new BukuTelephon();
+
+        if (mainform.getSearchWithNameTextField().getText().trim().isEmpty()) {
+            bukuImplements.getCariNama(mainform.getSearchWithNameTextField().getText());
+            isiTable();
+        } else {
+            JOptionPane JOptionPanel = null;
+            JOptionPane.showMessageDialog(null, "Nama Tidak Boleh Kosong");
+        }
+
+
         buku.setId(Integer.parseInt(mainform.getIdTextField().getText()));
         buku.setNotelp(mainform.getNoTelphonTextField().getText());
         buku.setNama(mainform.getNamaTextField().getText());

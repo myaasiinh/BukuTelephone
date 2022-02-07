@@ -11,7 +11,6 @@ public interface BukuImplements {
     public void update(BukuTelephon b);
 
     public void delete(BukuTelephon id);
-
     public BukuTelephon getId(int id);
 
     public List<BukuTelephon> getALL();
