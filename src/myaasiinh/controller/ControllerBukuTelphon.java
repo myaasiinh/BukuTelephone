@@ -28,25 +28,6 @@ public class ControllerBukuTelphon {
 
     }
 
-    public void insert(BukuTelephon bukuTelephon) {
-        bukuImplements.insert(bukuTelephon);
-    }
-
-    public void update(BukuTelephon bukuTelephon) {
-        bukuImplements.update(bukuTelephon);
-    }
-
-    public void delete(BukuTelephon bukuTelephon) {
-        bukuImplements.delete(bukuTelephon);
-    }
-
-    public void search(BukuTelephon bukuTelephon) {
-        bukuImplements.search(bukuTelephon);
-    }
-
-    public TableModel getAll() {
-        return (TableModel) new TableBukuTelephone(lb);
-    }
 
     //fungsi controller reset
     public void reset() {
@@ -134,7 +115,4 @@ public class ControllerBukuTelphon {
         mainform.getNamaTextField().setText(buku.getNama());
         mainform.getAlamatTextField().setText(buku.getAlamat());
     }
-
-
-
 }
