@@ -67,23 +67,28 @@ public class Main {
 
     private void initComponents() {
         cbt = new ControllerBukuTelphon(this);
-        cbt.isiTable();
         getINSERTButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cbt.insert();
+                cbt.isiTable();
+                cbt.reset();
             }
         });
         getUPDATEButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cbt.update();
+                cbt.isiTable();
+                cbt.reset();
             }
         });
         getDELETEButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cbt.delete();
+                cbt.isiTable();
+                cbt.reset();
             }
         });
         getRESETButton().addActionListener(new ActionListener() {
