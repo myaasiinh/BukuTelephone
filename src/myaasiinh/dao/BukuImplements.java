@@ -10,9 +10,13 @@ public interface BukuImplements {
 
     public void update(BukuTelephon b);
 
-    public void delete(int id);
+    public void delete(BukuTelephon id);
+
+    public BukuTelephon getId(int id);
 
     public List<BukuTelephon> getALL();
 
     public List<BukuTelephon> getCariNama(String nama);
+
+    List<BukuTelephon> search(BukuTelephon buku);
 }

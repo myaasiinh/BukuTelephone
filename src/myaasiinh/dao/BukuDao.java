@@ -13,7 +13,7 @@ import myaasiinh.koneksi.Koneksi;
 
 public class   BukuDao {
 
-    static Connection connection;
+    Connection connection;
 
     static final String insert = "INSERT into bukutelephon (nomor, nama, alamat) VALUES (?, ?, ?):";
     static final String update = "UPDATE bukutelephon set nomer=?, nama=?, alamat=? where id=? ;";
@@ -25,29 +25,15 @@ public class   BukuDao {
         Koneksi.getConnection();
     }
 
-
-    //fungsi masukan data ke database
-    public static void insert(BukuTelephon b) {
-        PreparedStatement statement = null;
+    public void insert (BukuTelephon buku) {
         try {
-            statement = connection.prepareStatement(insert);
-            statement.setString(1, b.getNotelp());
-            statement.setString(2, b.getNama());
-            statement.setString(3, b.getAlamat());
+            PreparedStatement statement = connection.prepareStatement(insert);
+            statement.setString(1, buku.getNotelp());
+            statement.setString(2, buku.getNama());
+            statement.setString(3, buku.getAlamat());
             statement.executeUpdate();
-            ResultSet rs = statement.getGeneratedKeys();
-            while (rs.next()) {
-                b.setId(rs.getInt(1));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                assert statement != null;
-                statement.close();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BukuDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -55,7 +41,7 @@ public class   BukuDao {
     }
 
     //fungsi update data ke database
-    public static void update(BukuTelephon b) {
+    public void update(BukuTelephon b) {
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(update);
@@ -80,7 +66,7 @@ public class   BukuDao {
     }
 
     //fungsi delete data dari database
-    public static void delete(int id) {
+    public void delete(int id) {
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(delete);
@@ -146,8 +132,4 @@ public class   BukuDao {
         }
         return lb;
     }
-
-
-
-
 }

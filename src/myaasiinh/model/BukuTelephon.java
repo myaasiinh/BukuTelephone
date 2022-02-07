@@ -39,4 +39,5 @@ public class BukuTelephon {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
+
 }

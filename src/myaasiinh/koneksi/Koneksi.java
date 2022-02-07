@@ -29,10 +29,7 @@ public class Koneksi {
 
     }
 
-    public static void main(String[] args) {
-
-        Koneksi.getConnection();
+    public static void setConnection(Connection connection) {
+        Koneksi.connection = connection;
     }
-
-
 }

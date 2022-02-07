@@ -1,66 +1,104 @@
 package myaasiinh.view;
 
+import myaasiinh.controller.ControllerBukuTelphon;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Main {
 
-    public JPanel panel1;
-    public JTextField inputIdTextField;
-    public JTextField inputNoTelphonTextField;
-    public JTextField inputNamaTextField;
-    public JTextField inputAlamatTextField;
-    public JButton INSERTButton;
-    public JButton UPDATEButton;
-    public JButton DELETEButton;
-    public JButton RESETButton;
-    public JTextField searchWithNameTextField;
-    public JButton SEARCHButton;
-    public JTable table;
+    public JPanel getPanel1() {
+        return Panel;
+    }
+
+    public JTextField getIdTextField() {
+        return IdTextField();
+    }
+
+    public JTextField getNoTelphonTextField() {
+        return  NoTelphonTextField;
+    }
+    public JTextField getNamaTextField() {
+        return NamaTextField;
+    }
+    public JTextField getAlamatTextField() {
+        return AlamatTextField;
+    }
+
+    public JButton getINSERTButton() {
+        return INSERTButton;
+    }
+
+    public JButton getUPDATEButton() {
+        return UPDATEButton;
+    }
+    public JButton getDELETEButton() {
+        return DELETEButton;
+    }
+    public JButton getRESETButton() {
+        return RESETButton;
+    }
+    public JTextField getSearchWithNameTextField() {
+        return SearchWithNameTextField;
+    }
+    public JButton getSEARCHButton() {
+        return SEARCHButton;
+    }
+    public JTable getTable(){
+        return Table;
+    }
+
+    ControllerBukuTelphon cbt;
 
 
     public Main() {
-        INSERTButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        UPDATEButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        DELETEButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        RESETButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        SEARCHButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
-
+        initComponents();
     }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("myaasiinh");
-        frame.setContentPane(new Main().panel1);
+        frame.setContentPane(
+                new Main().getPanel1());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    private void initComponents() {
+        cbt = new ControllerBukuTelphon(this);
+        cbt.isiTable();
+        getINSERTButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cbt.insert();
+            }
+        });
+        getUPDATEButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cbt.update();
+            }
+        });
+        getDELETEButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cbt.delete();
+            }
+        });
+        getRESETButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cbt.reset();
+            }
+        });
+        getSEARCHButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cbt.search();
+            }
+        });
+
     }
 }
 
